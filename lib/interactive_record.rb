@@ -53,9 +53,9 @@ class InteractiveRecord
     binding.pry
   end
 
-  def self.find_by(id)
-    sql = "SELECT * FROM #{self.table_name} WHERE id = ?"
-    DB[:conn].execute(sql,id)
+  def self.find_by(grade)
+    sql = "SELECT * FROM #{self.table_name} WHERE grade = ?"
+    DB[:conn].execute(sql,grade)
   end
 end
 
