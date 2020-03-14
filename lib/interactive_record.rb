@@ -56,11 +56,10 @@ class InteractiveRecord
   def self.find_by(attribute)
     attribute_key = attribute.keys.join()
     attribute_value = attribute.values.first
-    sql = <<-SQL
-     SELECT * FROM #{self.table_name}
-     WHERE #{attribute_key} = #{attribute_value}
+    sql = "SELECT * FROM #{self.table_name}
+     WHERE #{attribute_key} = #{attribute_value}"
      DB[:conn].execute(sql,grade)
-     LIMIT 1
+     
      SQL
      DB[:conn].execute(sql)
   end
